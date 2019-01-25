@@ -1,0 +1,62 @@
+package bibliotecaspring.controllers;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import bibliotecaspring.daos.LivroDAO;
+import bibliotecaspring.models.Livro;
+
+@Controller
+public class LivrosController {
+
+	@RequestMapping("/livros/adicionarLivro")
+	public String form() {
+		System.out.println("Chamou o método do formulario");
+		return "livros/adicionarLivro";
+	}
+
+	@PostMapping("/livros")
+	public String adicionar(Livro livro) {
+		System.out.println("Chamou o metodo de adiconar");
+		System.out.println(livro);
+		LivroDAO livroDAO = new LivroDAO();
+		livroDAO.inserir(livro);
+		return "redirect:livros";
+	}
+
+	@GetMapping("/livros")
+	public ModelAndView listar() {
+		System.out.println("Chamou o método de listagem");
+		LivroDAO livroDAO = new LivroDAO();
+		List<Livro> lista = livroDAO.getLista();
+		ModelAndView model = new ModelAndView("livros/listarLivro");
+		model.addObject("livros", lista);
+		return model;
+
+	}
+	
+	@GetMapping("/livros/busca")
+	public ModelAndView listarPeloTitulo(String titulo) {
+		System.out.println("Chamou o método de busca");
+		LivroDAO livroDAO = new LivroDAO();
+		List<Livro> = livroDAO.buscaPorTitulo(titulo);
+		ModelAndView model = new ModelAndView("livros/listarLivro");
+		model.addObject("livros", livro);
+		return model;
+
+	}
+
+	@RequestMapping("/livros/remover")
+	public String remover(Livro livro) {
+		System.out.println("Chamou o método remover");
+		LivroDAO livroDAO = new LivroDAO();
+		livroDAO.remover(livro);
+		return "redirect:../livros";
+	}
+
+}

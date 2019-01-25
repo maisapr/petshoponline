@@ -1,0 +1,62 @@
+<ul>
+	<li><a href="/bibliotecaspring/">Home</a></li>
+			<li><a href="/bibliotecaspring/alunos/adicionarAluno">Cadastrar
+					Alunos</a></li>
+			<li><a href="/bibliotecaspring/livros/adicionarLivro">Adicionar
+					Livros</a></li>
+			<li><a href="/bibliotecaspring/livros">Listar livros</a></li>
+
+			<li><a href="/bibliotecaspring/alunos">Listar Alunos</a></li>
+			<li><a href="/bibliotecaspring/emprestimo">Verificação de
+					Emprestimos</a></li>
+			
+			
+				</form></li>
+</ul>
+
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<style>
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image:
+		url("https://yese69.com/wp-content/uploads/data/2018/1/2/top-books-background-1920x1200-ios-WTG30215291.jpg?w=609&h=381");
+}
+
+ul {
+	list-style-type: none;
+	overflow: hidden;
+	background-color: #330000;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	
+	color: white;
+	text-align: center;
+	padding: 25px 64px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #ffaa80;
+}
+
+html {
+	font-family: Georgia, "Courier New", serif;
+	font-weight: bold;
+	font-size: 16px;
+	color: white;
+}
+
+
+</style>
+</head>
+<body>

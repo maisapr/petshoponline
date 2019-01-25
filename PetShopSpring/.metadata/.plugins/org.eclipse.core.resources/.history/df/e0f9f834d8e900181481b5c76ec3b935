@@ -1,0 +1,92 @@
+<ul>
+	<li><form method="GET" action="/bibliotecaspring/livros/busca">
+			<input type="text" name="titulo" placeholder="Digite um titulo" />
+
+			<button type="submit">Buscar Livro</button>
+			<li><a href="/bibliotecaspring/">Home</a></li>
+			<li><a href="/bibliotecaspring/alunos/adicionarAluno">Cadastrar
+					Alunos</a></li>
+			<li><a href="/bibliotecaspring/livros/adicionarLivro">Adicionar
+					Livros</a></li>
+			<li><a href="/bibliotecaspring/livros">Listar livros</a></li>
+
+			<li><a href="/bibliotecaspring/alunos">Listar Alunos</a></li>
+			<li><a href="/bibliotecaspring/emprestimo">Verificação de
+					Emprestimos</a></li>
+
+
+		</form></li>
+</ul>
+
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; }
+body { padding: 20px; }
+.break {padding: 10px;}
+
+//////// Structure  ////////
+.button {
+  // Reset
+  display: inline-block;
+  box-shadow: none;
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  padding: 10px;
+  background: #CFCFCF;
+  font-size: 14px;
+}
+.button-ico {
+  padding: 10px 10px 10px 30px;
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 7px;
+    top: 7px;
+  }
+}
+
+//////// Skin  ////////
+.button-small {
+  padding: 5px;
+}
+.button-large {
+  padding: 15px;
+}
+.button-lowercase {
+  text-transform: none;
+}
+.button-blue {
+  background: rgb(101, 101, 255);
+  color: #fff;
+}
+.button-yellow {
+  background: rgb(255, 255, 86);
+  color: #000;
+}
+.button-red {
+  background: rgb(255, 69, 69);
+  color: #fff;
+}
+.button-orange {
+  background: orange;
+  color: #fff;
+}
+.button-green {
+  background: rgb(78, 226, 78);
+}
+
+.button-download {
+  &:before {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABmJLR0QA/wD/AP+gvaeTAAAEB0lEQVR4nO3bS2hcZRjG8X/Sii1WQSviDVERb6AUdVHxggvFUkRQFHEVURBXtiLeQAQRWndeiq3LIlLRhYp2pShxo6IFW9GCNwJeKFaMSmupGhMX3wQTncz7NTlzvplz/j84BMKZc573PWEgeTIgSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZLaagTYCqwrHWQA3Qg8UzpEv20FZoA/gOsLZxkk64E/SbvZUjhL32wiDTh7/A5cUTTRYLgKOMT83TxeNFEfPMz8AWePX4A1BXOVdgnwK91382DBXJW6B5im+5AzwA/A2cXSlXM+sJ+F9zJN2t3Qe4WFh5w9vgBOKhWwgFOAr4n38nKpgFU6CthJPOxnwOpCGet0MvAl8T7eJO2uEVYC48RDfwQcWyZiLY4H9hDvYZy0s0Y5DthFPPy7wIpCGfvpGOB94vk/Ju2qkU4E9hIv4Q1geaGM/XA08Bbx3J+TdtRopwETxMt4ERgtlLFKy4BXieedIO2mFc4B9hEv5blSASsyAmwnnnMfaSetchEwSbycJ0oFrMDTxPP9TNpFK60FDhAv6YFSAZfgEeK5DpB20GrXAofpvahp4O5SARdhI/HDP0yaXcBNwBS9F/Y3cFupgEfgdlLWXrP8RZpZc4zRuzOYIVWm60sFzHAD/9a6vd7NxkoFHHQbiN86DwFXlwrYwzX8v9btdtxbKN/Q2Ey8xN+AS0sF7OIyUqYo96ZSAYfJCLCNeJn7gQsKZZzrQuAn4rxPlQo4jEaBHcRL/Q44s0xEAM4CvifOuYNm/FWzVrk18lekirVuuZ1+o2rduq0E3iNe8h5S1VqXE4BPM3KN08Bat265NfIHwKoa8qwCPszIs4sG17p1y62R3yZVr/2yAngnI8deWlDr1u108mrk1+jP/xIsB17PuP8ELap165ZbI28n/TpZlVHghYz7trLWrdvF5NXIz1Z4zy0Z95ukxbVu3dYCB4kfyqMV3OuxjPtY6xaQUyPPAPct4R73Z1zfWregnBp5GrhzEde+i7idtNYdAGPED2oKuOUIrnkreT9YY5VMoCV7iPitOvcj6es650bX21DpBFqyJ4kfWvSR9Cs750TX2dyXCbQkI8DzxA9voY+kr2Hhj2rPPbZR7d8YVKFR4CXih/gjcO6c153X+V70OmvdIZBbI38DnAqcAXybcf5OrHWHRm5j9wmwO+O8uppGVSi3Ro4Oa90hllsjL3RY6zZAbo3832Oi81o1QG6NPHtY6zZQbo082TlXDXQ5vWvkg1jrNt51dK+RrXVb5Gbmt31TWOu2zh2kSrfVte6y0gEK2t35Ok61/z8oSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZK0KP8AWM8IoAnD8/EAAAAASUVORK5CYII=");
+    background-size: cover;
+  }
+</style>
+</head>
+<body>

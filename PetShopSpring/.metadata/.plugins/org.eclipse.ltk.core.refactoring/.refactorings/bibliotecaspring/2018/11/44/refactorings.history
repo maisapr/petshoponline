@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;bibliotecaspring/WebContent/WEB-INF/views/livro&apos; to &apos;livros&apos;" description="Rename resource &apos;livro&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/WEB-INF/views/livro" name="livros" stamp="1541090510084" updateReferences="true"/>
+</session>

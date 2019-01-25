@@ -1,0 +1,53 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Listagem alunos</title>
+</head>
+<body>
+
+	<c:import url="../Menu.jsp"></c:import>
+
+
+
+	<h1>Lista de alunos</h1>
+
+	<table border="3">
+		<thead>
+
+			<tr>
+
+				<th>Matricula</th>
+				<th>nome</th>
+				<th>Cpf</th>
+				<th>Data de Nascimeto</th>
+				<th>Endereço</th>
+				<th>Remover Aluno</th>
+
+			</tr>
+			<c:forEach var="aluno" items="${alunos}">
+
+
+				<tr>
+
+					<td>${aluno.matricula}</td>
+					<td>${aluno.nome}</td>
+					<td>${aluno.cpf}</td>
+					<td>${aluno.endereco}</td>
+					<td><fmt:formatDate value="${aluno.dataNascimento.time}"
+							pattern="dd/MM/yyyy" /></td>
+					<td><a href="/bibliotecaspring/alunos/remover?id=${aluno.id}">Remover Aluno</a></td>
+
+				</tr>
+			</c:forEach>
+	</table>
+</body>
+</html>
+
+</body>
+</html>

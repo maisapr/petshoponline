@@ -1,0 +1,280 @@
+<ul>
+	<li><form method="GET" action="/bibliotecaspring/livros/busca">
+			<input type="text" name="titulo" placeholder="Digite um titulo" />
+
+			<button type="submit">Buscar Livro</button>
+
+			<li><a href="/bibliotecaspring/">Home</a></li>
+			<li><a href="/bibliotecaspring/alunos/adicionarAluno">Cadastrar
+					Alunos</a></li>
+			<li><a href="/bibliotecaspring/livros/adicionarLivro">Adicionar
+					Livros</a></li>
+			<li><a href="/bibliotecaspring/livros">Listar livros</a></li>
+
+			<li><a href="/bibliotecaspring/alunos">Listar Alunos</a></li>
+			<li><a href="/bibliotecaspring/emprestimo">Verificação de
+					Emprestimos</a></li>
+			
+			
+				</form></li>
+</ul>
+
+ <head>
+        <meta charset= "UTF-8">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body{
+                background-color:#b30000;
+	
+            }		
+
+
+
+			.heade {
+			margin: 0px auto 0px auto;
+            width: 1590px;
+            height: 400px;
+            text-align: center;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size:950px 650px;
+            background-image: url("capa.jpg");
+            color: black;
+            padding: 15px;
+			font-size: 39px;
+			 background-color:#b30000;
+           }
+			
+			
+			
+
+            #menu ul li a {
+                padding: 2px 10px;
+                display: inline-block;
+                background-color:#EDEDED;
+                color: #333;
+                text-decoration: none;
+                border-bottom:3px solid #EDEDED;
+
+            }
+
+
+
+
+            .row::after {
+                content: "";
+                clear: both;
+                display: block;
+            }
+
+
+
+            [class*="col-"] {
+                float: left;
+                padding: 0px;
+            }
+
+
+
+            ul.nav { 
+                margin:0; 
+                padding:0;
+            }
+
+
+
+
+            ul.nav li {
+                list-style:none;	
+                display:inline;
+            }
+
+
+
+            ul.nav li a {
+                float:left;
+                border:1px solid black;
+                width:6.0em;
+                background:black;
+                color:#333;
+                text-align:center;
+                padding:0  0.2em 0.2em  0;
+                text-decoration:none;
+            }
+
+
+
+
+            p {
+                display: inline;
+            }
+
+
+
+             {
+                text-align: center;
+            }
+
+
+
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color:#ffffff;
+            }
+
+
+
+            li {
+                float: left;
+            }
+
+
+
+
+
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+
+
+            li a:hover {
+                background-color:#b30000;
+            }
+
+
+
+            .box {
+                float: left;
+                width: 200px;
+                height: 100px;
+                margin: 1em;
+            }
+
+
+
+            .after-box {
+                clear: left;
+            }
+
+
+
+
+            html {
+              font-family: 'Courier New',Courier,Freemono,'Nimbus Mono L',monospace;
+            }
+
+
+            .menu ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+
+
+            .menu li {
+                padding: 15px;
+                margin-bottom: 5px;
+                background-color: #000000;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            }
+
+
+
+            .menu li:hover {
+                background-color:black;
+
+            
+
+            }
+            .aside {
+                background-color:#ffffff;
+                padding: 25px;
+                color: #b30000;
+                text-align: center;
+                font-size: 10.9px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+                text-align:justify;
+
+
+            }
+
+
+
+
+
+
+            .footer {
+                background-color:black;
+                color: #ffffff;
+                text-align: center;
+                font-size: 15px;
+                padding: 20px;
+
+            }
+
+
+
+
+            [class*="col-"] {
+                width: 100%;
+            }
+
+
+
+            @media only screen and (min-width: 600px) {
+
+                .col-m-1 {width: 8.33%;}
+                .col-m-2 {width: 16.66%;}
+                .col-m-3 {width: 25%;}
+                .col-m-4 {width: 33.33%;}
+                .col-m-5 {width: 41.66%;}
+                .col-m-6 {width: 50%;}
+                .col-m-7 {width: 58.33%;}
+                .col-m-8 {width: 66.66%;}
+                .col-m-9 {width: 75%;}
+                .col-m-10 {width: 83.33%;}
+                .col-m-11 {width: 91.66%;}
+                .col-m-12 {width: 100%;}
+            }
+
+
+			
+
+
+
+
+            @media only screen and (min-width: 768px) {
+
+                .col-1 {width: 8.33%;}
+                .col-2 {width: 16.66%;}
+                .col-3 {width: 25%;}
+                .col-4 {width: 33.33%;}
+                .col-5 {width: 41.66%;}
+                .col-6 {width: 50%;}
+                .col-7 {width: 58.33%;}
+                .col-8 {width: 66.66%;}
+                .col-9 {width: 75%;}
+                .col-10 {width: 83.33%;}
+                .col-11 {width: 91.66%;}
+                .col-12 {width: 100%;}
+            }
+
+
+
+
+
+        </style>
+    </head>

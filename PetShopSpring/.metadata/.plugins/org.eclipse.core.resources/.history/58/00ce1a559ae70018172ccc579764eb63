@@ -1,0 +1,133 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<c:import url="../Menu.jsp"></c:import>
+
+	<h1>Lista de emprestimos</h1>
+	
+	<form action="/bibliotecaspring/emprestimo" method="post">
+	
+		<h3>Cadastro DevMedia</h3>
+					</div>
+				</div>
+				<div class="form-opn-chamado span12" style="margin: 0">
+					<form class="allForm" id="novoChamadoForm" method="POST">
+						<ul>	
+							
+							<li>
+							    <label for="login">Login:</label>
+							    <input id="val-login" type="text" maxlength="80" pattern="[A-Za-z0-9!@.\-_]*" name="login" value="" required="required" />
+							    <label id="aviso-login"></label>
+							</li>
+							<li>
+							    <label for="senha">Senha:</label>
+							    <input id="senha" minlength="5" maxlength="30" type="password" pattern="[A-Za-z0-9!@.]*" name="senha" required="required" autocomplete="off" />
+							</li>
+							<li>
+							    <label for="senha2">Confirmação de senha:</label>
+							    <input id="confSenha" minlength="5" maxlength="30" type="password" pattern="[A-Za-z0-9!@.]*" name="senha2" required="required" autocomplete="off" />
+							</li>
+							<li>
+							    <label id="lbl-nome" for="nome">Nome:</label>
+							    <input type="text" maxlength="60" name="nome" pattern="[A-Za-zà-ýÀ-Ý0-9!@.ç ]*" value="" required="required" />
+							</li>
+							<li class="nomeContato" style="display: none" >
+							    <label for="nomeContato">Seu nome:</label>
+							    <input id="nomeContato" maxlength="50" pattern="[A-Za-zà-ýÀ-Ý0-9!@.ç ]*" type="text" name="nomeContato" value=""  />
+							</li>
+							<li>
+							    <label for="email">E-mail:</label>
+							    <input type="email" pattern="[a-z0-9._+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" maxlength="60" value="" required="required" />
+							</li>
+							<li>
+							    <label for="place">Você está:</label>
+							    <span class="input-label tp-radio">
+								    <input id="brasil" class="place" type="radio" name="place"  checked value="B" required="required" /><label class="labelRadio" for="brasil"> No Brasil</label><br class="visible-phone hideBr" />
+								    <input id="fora" class="place" type="radio" name="place"  value="F" required="required" /><label class="labelRadio" for="fora"> Fora do Brasil</label>
+							    </span>
+							</li>
+							<li class="pais"   style="display: none">
+							    <label for="pais">Pais:</label>
+							    <input id="pais" type="text" pattern="[A-Za-zà-ýÀ-Ý0-9!@.ç ]*" maxlength="30" name="pais" value=""  />
+							</li>
+							<li class="estado" style="display: none">
+							    <label for="estado">Estado:</label>
+								<select id="estado" name="estado" class="selectEstado">
+									<option value="">Selecione o seu estado</option>
+																														<option value="AC" >Acre</option>
+																					<option value="AL" >Alagoas</option>
+																					<option value="AP" >Amapá</option>
+																					<option value="AM" >Amazonas</option>
+																					<option value="BA" >Bahia</option>
+																					<option value="CE" >Ceará</option>
+																					<option value="DF" >Distrito Federal</option>
+																					<option value="ES" >Espírito Santo</option>
+																					<option value="GO" >Goiás</option>
+																					<option value="MA" >Maranhão</option>
+																					<option value="MT" >Mato Grosso</option>
+																					<option value="MS" >Mato Grosso do Sul</option>
+																					<option value="MG" >Minas Gerais</option>
+																					<option value="PA" >Pará</option>
+																					<option value="PB" >Paraíba</option>
+																					<option value="PR" >Paraná</option>
+																					<option value="PE" >Pernambuco</option>
+																					<option value="PI" >Piauí</option>
+																					<option value="RJ" >Rio de Janeiro</option>
+																					<option value="RN" >Rio Grande do Norte</option>
+																					<option value="RS" >Rio Grande do Sul</option>
+																					<option value="RO" >Rondônia</option>
+																					<option value="RR" >Roraima</option>
+																					<option value="SC" >Santa Catarina</option>
+																					<option value="SP" >São Paulo</option>
+																					<option value="SE" >Sergipe</option>
+																					<option value="TO" >Tocantins</option>
+																											</select>
+							</li>
+							<li class="cidade" style="display: none">
+							    <label for="cidade">Cidade:</label>
+								<select id="cidade" name="cidade" class="selectCidades">
+								</select>
+								<input type="hidden" name="nomeCidade" id="nomeCidade" value="">
+							</li>
+							<!-- <li>
+							    <label for="dataNascimento">Data de Nascimento:</label>
+							    <input type="text" name="dataNascimento" maxlength="11" pattern="\d{1,2}/\d{1,2}/\d{4}" id="dataNascimento" maxlength="12" value="" required="required" />
+							</li> -->
+							<li>
+							    <label id="tel-contato" for="telContato">Tel. Contato:</label>
+							    <input id="telContatoDDD" maxlength="3" pattern="[0-9]+$" type="tel" name="telContatoDDD" value="" required="required" />
+							    <input id="telContato" pattern="[0-9]{4,5}-[0-9]{4}" type="tel" name="telContato" value="" required="required" />
+							</li>
+							<li>
+							    <label for="politicaPrivacidade">Politica de privacidade:</label>
+							    <input id="politicaPrivacidade" type="checkbox" name="politicaPrivacidade" checked required="required" /><label style="width: auto; margin: 15px;">Li e concordo com os termos da <a target="_blank" class="linkPolitica" onClick="window.open('http://www.devmedia.com.br/join/politicaprivacidade.asp','JANELA','scrollbars=1,height=300,width=450');">politica de privacidade</a></label>
+							</li>
+							<li class="li-center"> 
+								<div style="width: 300px;margin-top:10px;margin-bottom: 20px;">
+									<div class="g-recaptcha" data-sitekey="6Lf0ASMTAAAAAJ9oVhAvTQ1ednTUfNktj9T6q0U5"></div>																	</div>
+															</li>
+							<li class="li-center">
+								<input type="hidden" name="funcao" value="cadastrarUsuario" />
+								<button id="cadastrarBotao" class="submit" type="submit">Cadastrar <img class="join-loading" src="https://www.devmedia.com.br/comentarios/img/loading.gif" alt="loading"></button>
+							</li>
+						</ul>
+											</form>
+				</div>
+			</div>
+
+
+	</form>
+	
+
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+127.0.0.1 - - [30/Oct/2018:16:59:57 -0300] "GET / HTTP/1.1" 404 1078
+0:0:0:0:0:0:0:1 - - [30/Oct/2018:16:59:58 -0300] "GET /bibliotecaspring/WEB-INF/views/aluno/adicionarAluno.jsp HTTP/1.1" 404 1055

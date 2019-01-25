@@ -1,0 +1,67 @@
+<ul>
+	<li><a href="/bibliotecaspring/">Home</a></li>
+			<li><a href="/bibliotecaspring/alunos/adicionarAluno">Cadastrar
+					Alunos</a></li>
+			<li><a href="/bibliotecaspring/livros/adicionarLivro">Adicionar
+					Livros</a></li>
+			<li><a href="/bibliotecaspring/livros">Listar livros</a></li>
+
+			<li><a href="/bibliotecaspring/alunos">Listar Alunos</a></li>
+			<li><a href="/bibliotecaspring/emprestimo">Verificação de
+					Emprestimos</a></li>
+			
+			
+				</form></li>
+</ul>
+
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<style>
+#menubv {
+width: 136px; - LARGURA
+padding: 0;
+margin: 0;
+font: 10px Verdana, sans-serif;
+}
+ 
+#menubv ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+ 
+#menubv li {
+border-bottom: 1px solid #000000;
+margin: 0;
+}
+ 
+#menubv li a {
+display: block;
+padding: 5px 5px 5px 0.5em;
+font-weight:bold;
+border-top: 1px solid #000000;
+border-width: 1px solid #000000;
+border-left: 1px solid #000000;
+border-right: 1px solid #000000;
+background-color: red;
+color: #FFFFFF;
+text-decoration: none;
+}
+ 
+#menubv li a:hover {
+border-left: 1px solid #000000;
+border-right: 1px solid #000000;
+background-color: #ff6600;
+color: #fff;
+}
+ 
+ 
+/* Fix IE. Hide from IE Mac */
+* html #menubv ul li { float: left; height: 1%; }
+* html #menubv ul li a { height: 1%; }
+
+
+</style>
+</head>
+<body>

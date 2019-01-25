@@ -1,0 +1,49 @@
+package bibliotecaspring.controllers;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import bibliotecaspring.daos.EmprestimoDAO;
+import bibliotecaspring.models.Emprestimo;
+
+@Controller
+public class EmprestimoController {
+
+	@RequestMapping("/emprestimo/Form")
+	public String form() {
+		return "emprestimo/Form";
+	}
+
+	@GetMapping("/emprestimo")
+	public ModelAndView listarEmprestimos() {
+		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
+		//List<Emprestimo> lista = emprestimoDAO.getEmprestimos();
+		ModelAndView model = new ModelAndView("emprestimo/lista");
+		//model.addObject("emprestimos", lista);
+		return model;
+	}
+
+	@GetMapping("/emprestimo/atrasados")
+	public ModelAndView listarEmprestimosAtrasados() {
+		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
+		List<Emprestimo> lista = emprestimoDAO.getEmprestimosAtrasados();
+		ModelAndView model = new ModelAndView("emprestimo/lista");
+		model.addObject("emprestimos", lista);
+		return model;
+	}
+
+	@GetMapping("/emprestimo/ativos")
+	public ModelAndView listarEmprestimosAtivos() {
+		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
+		List<Emprestimo> lista = emprestimoDAO.getEmprestimosAtivos();
+		ModelAndView model = new ModelAndView("emprestimo/lista");
+		model.addObject("emprestimos", lista);
+		return model;
+	}
+
+}

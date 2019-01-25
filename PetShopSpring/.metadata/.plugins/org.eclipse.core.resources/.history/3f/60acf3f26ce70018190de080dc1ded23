@@ -1,0 +1,72 @@
+package bibliotecaspring.models;
+
+import java.util.Calendar;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+public class Livro {
+
+	private Long id;
+	private String titulo;
+	private String autor;
+	private String editora;
+	private Calendar anoPublicacao;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private String edicao;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getAutor() {
+		return autor;
+	}
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+
+	public String getEditora() {
+		return editora;
+	}
+
+	public void setEditora(String editora) {
+		this.editora = editora;
+	}
+
+	public Calendar getAnoPublicacao() {
+		return anoPublicacao;
+	}
+
+	public void setAnoPublicacao(Calendar dataPublicacao) {
+		this.anoPublicacao = dataPublicacao;
+	}
+
+	public String getEdicao() {
+		return edicao;
+
+	}
+
+	public void setEdicao(String edicao) {
+		this.edicao = edicao;
+	}
+
+	@Override
+	public String toString() {
+		return "Contato [id=" + id + ", titulo=" + titulo + ", autor=" + autor + ", editora=" + editora
+				+ ", dataPublicacao=" + anoPublicacao + ", edicao=" + edicao + "]";
+	}
+
+}

@@ -1,0 +1,171 @@
+<ul>
+	<li><a href="/bibliotecaspring/">Home</a></li>
+			<li><a href="/bibliotecaspring/alunos/adicionarAluno">Cadastrar
+					Alunos</a></li>
+			<li><a href="/bibliotecaspring/livros/adicionarLivro">Adicionar
+					Livros</a></li>
+			<li><a href="/bibliotecaspring/livros">Listar livros</a></li>
+
+			<li><a href="/bibliotecaspring/alunos">Listar Alunos</a></li>
+			<li><a href="/bibliotecaspring/emprestimo">Verificação de
+					Emprestimos</a></li>
+			
+			
+				</form></li>
+</ul>
+
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<style>
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image:
+		url("https://yese69.com/wp-content/uploads/data/2018/1/2/top-books-background-1920x1200-ios-WTG30215291.jpg?w=609&h=381");
+}
+
+ul {
+	list-style-type: none;
+	overflow: hidden;
+	background-color: #330000;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 25px 64px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #ffaa80;
+}
+
+html {
+	font-family: Georgia, "Courier New", serif;
+	font-weight: bold;
+	font-size: 16px;
+	color: white;
+}
+
+
+
+$(document).ready(function() {
+    $('#widget-point').append(
+      '<div id="xyz" data-widget data-locale="en" data-mode="signup" data-type="dual"></div>'
+    );
+    $('#xyz').each(function() {
+      var appKey = "App Key 1";
+      var settings = $(this).data();
+      settings.app = appKey;
+      settings.events = {
+        signup: function(event, formValues) {
+          console.log("Signup: formValues:", formValues);
+          window.location.replace('https://get.ringcaptcha.com/king-authr-login-2');
+        }
+      };
+      settings.form = [
+        {
+          id: 'email',
+          type: 'email',
+          placeholder: 'Email',
+          validations: {
+            presence: 'Email should be present',
+            format: { message: 'Invalid email' }
+          }
+        },
+        {
+          id: 'phone',
+          type: 'phone',
+          validations: {
+            length: { min: 5, max: 15, message: 'Invalid phone' }
+          }
+        }
+      ];
+      settings.userManagement = true;
+      new RingCaptcha.Widget(this, settings.app, settings);
+    });
+  });
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+$(document).ready(function() {
+    $('#widget-point').append(
+      '<div id="xyz" data-widget data-locale="en" data-mode="signup" data-type="dual"></div>'
+    );
+    $('#xyz').each(function() {
+      var appKey = "App Key 1";
+      var settings = $(this).data();
+      settings.app = appKey;
+      settings.events = {
+        signup: function(event, formValues) {
+          console.log("Signup: formValues:", formValues);
+          window.location.replace('https://get.ringcaptcha.com/king-authr-login-2');
+        }
+      };
+      settings.form = [
+        {
+          id: 'email',
+          type: 'email',
+          placeholder: 'Email',
+          validations: {
+            presence: 'Email should be present',
+            format: { message: 'Invalid email' }
+          }
+        },
+        {
+          id: 'phone',
+          type: 'phone',
+          validations: {
+            length: { min: 5, max: 15, message: 'Invalid phone' }
+          }
+        }
+      ];
+      settings.userManagement = true;
+      new RingCaptcha.Widget(this, settings.app, settings);
+    });
+  });
+</style>
+</head>
+<body>

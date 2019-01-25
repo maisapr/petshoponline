@@ -1,0 +1,112 @@
+package bibliotecaspring.controllers;
+
+import java.util.Calendar;
+import java.util.List;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.stereotype.Controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import bibliotecaspring.daos.AlunoDAO;
+import bibliotecaspring.daos.LivroDAO;
+import bibliotecaspring.daos.EmprestimoDAO;
+import bibliotecaspring.models.Livro;
+import bibliotecaspring.models.Aluno;
+import bibliotecaspring.models.Emprestimo;
+
+@Controller
+public class EmprestimoController {
+	@RequestMapping("/emprestimo/form")
+	public String form() {
+		return "emprestimo/form";
+	}
+
+	@GetMapping("/emprestimo/ativos")
+	public ModelAndView Ativos() {
+		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
+		List<Emprestimo> lista = emprestimoDAO.getEmprestimosAtivos();
+		ModelAndView model = new ModelAndView("emprestimo/lista");
+		model.addObject("emprestimos", lista);
+		return model;
+	}
+
+	@GetMapping("/emprestimo/atrasados")
+	public ModelAndView Atrasados() {
+		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
+		List<Emprestimo> lista = emprestimoDAO.getEmprestimosAtrasados();
+		ModelAndView model = new ModelAndView("emprestimo/lista");
+		model.addObject("emprestimos", lista);
+		return model;
+	}
+
+	@PostMapping("/emprestimo")
+	public ModelAndView adicionar(String matriculaAluno, String titulo) {
+
+		AlunoDAO alunoDAO = new AlunoDAO();
+		Aluno aluno = new Aluno();
+		aluno = alunoDAO.getByMatricula(matriculaAluno);
+
+
+		LivroDAO livroDAO = new LivroDAO();
+		Livro livro = new Livro();
+		livro = livroDAO.buscaPorTitulo(titulo);
+
+		Emprestimo emprestimo = new Emprestimo();
+		emprestimo.setAluno(aluno);
+		emprestimo.setLivro(livro);
+		emprestimo.setDataEmprestimo(Calendar.getInstance());
+
+		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
+		if (emprestimoDAO.verificarAluno(aluno.getId())) {
+			if (emprestimoDAO.verificarLivro(livro.getId())) {
+				emprestimoDAO.inserir(emprestimo);
+				return listarEmprestimos();
+
+			} else {
+				ModelAndView model = new ModelAndView("emprestimo/lista");
+				return model;
+
+			}
+
+		} else {
+			ModelAndView model = new ModelAndView("emprestimo/lista");
+			return model;
+		}
+
+	}
+
+	@PostMapping("/emprestimo/devolucao")
+	public String devolucao(long idAluno, long idLivro) {
+
+		Aluno aluno = new Aluno();
+		Livro livro = new Livro();
+		Emprestimo emprestimo = new Emprestimo();
+
+		AlunoDAO alunoDAO = new AlunoDAO();
+		LivroDAO livroDAO = new LivroDAO();
+		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
+
+		aluno = alunoDAO.getById(idAluno);
+		livro = livroDAO.getById(idLivro);
+
+		emprestimo.setAluno(aluno);
+		emprestimo.setLivro(livro);
+
+		emprestimoDAO.devolucao(emprestimo);
+
+		return "redirect:/emprestimo";
+
+	}
+
+	@GetMapping("/emprestimo")
+	public ModelAndView listarEmprestimos() {
+		EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
+		List<Emprestimo> lista = emprestimoDAO.getEmprestimos();
+		ModelAndView model = new ModelAndView("emprestimo/lista");
+		model.addObject("emprestimos", lista);
+		return model;
+	}
+
+}

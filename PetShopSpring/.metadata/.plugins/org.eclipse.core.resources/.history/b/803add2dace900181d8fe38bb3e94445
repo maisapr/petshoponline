@@ -1,0 +1,61 @@
+<ul>
+	<li><a href="/bibliotecaspring/">Home</a></li>
+			<li><a href="/bibliotecaspring/alunos/adicionarAluno">Cadastrar
+					Alunos</a></li>
+			<li><a href="/bibliotecaspring/livros/adicionarLivro">Adicionar
+					Livros</a></li>
+			<li><a href="/bibliotecaspring/livros">Listar livros</a></li>
+
+			<li><a href="/bibliotecaspring/alunos">Listar Alunos</a></li>
+			<li><a href="/bibliotecaspring/emprestimo">Verificação de
+					Emprestimos</a></li>
+			
+			
+				</form></li>
+</ul>
+
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<style>
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url("https://www.google.com.br/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjW1eP2j9neAhUDfpAKHXTjA4kQjRx6BAgBEAU&url=https%3A%2F%2Fwww.photopro.com.br%2Ftutoriais-gratis%2Fnovidade-photoshop-cc-gerar-codigos-css%2F&psig=AOvVaw26YHM8RdDkqW1q68Hrft7Y&ust=1542464968150402");
+}
+
+ul {
+	list-style-type: none;
+	overflow: hidden;
+	background-color: #330000;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 25px 64px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #ffaa80;
+}
+
+html {
+	font-family: Georgia, "Courier New", serif;
+	font-weight: bold;
+	font-size: 16px;
+	color: white;
+}
+
+
+</style>
+</head>
+<body>

@@ -1,0 +1,53 @@
+<ul>
+	<li><form method="GET" action="/bibliotecaspring/livros/busca">
+			<input type="text" name="titulo" placeholder="Digite um titulo" />
+
+			<button type="submit">Buscar Livro</button>
+			<li><a href="/bibliotecaspring/">Home</a></li>
+			<li><a href="/bibliotecaspring/alunos/adicionarAluno">Cadastrar
+					Alunos</a></li>
+			<li><a href="/bibliotecaspring/livros/adicionarLivro">Adicionar
+					Livros</a></li>
+			<li><a href="/bibliotecaspring/livros">Listar livros</a></li>
+
+			<li><a href="/bibliotecaspring/alunos">Listar Alunos</a></li>
+			<li><a href="/bibliotecaspring/emprestimo">Verificação de
+					Emprestimos</a></li>
+
+
+		</form></li>
+</ul>
+
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<style>
+.container-main {
+  width: 980px; 
+  margin: 0 auto; 
+  position: relative; 
+  padding-left: 20px; 
+  padding-right: 20px;
+}
+#header {
+  @include clearfix();
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  .logo {
+    float: left;
+    padding: 10px 20px;
+  }
+}
+#footer {
+  @include clearfix();
+  background: #999;
+  border-top: 1px solid #ccc;
+  .map-links {
+    float: left;
+    padding: 10px 20px;
+    color: #f0f0f0;
+  }
+}
+</style>
+</head>
+<body>
